@@ -15,8 +15,8 @@ Pre-requisites
 Screenshots
 -----------
 <p align="center">
-  <img src="https://github.com/huawei-appmate/AppmateDemoJava/Screenshot_1.jpg" width="350" style="margin-right:10px">
-  <img src="https://github.com/huawei-appmate/AppmateDemoJava/Screenshot_2.png" width="350">
+  <img src="https://github.com/huawei-appmate/AppmateDemoJava/blob/main/screenshots/Screenshot_1.jpg?raw=true" width="350" style="margin-right:10px">
+  <img src="https://github.com/huawei-appmate/AppmateDemoJava/blob/main/screenshots/Screenshot_2.jpg?raw=true" width="350">
 </p>
 
 Getting Started
