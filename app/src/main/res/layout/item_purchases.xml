@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.huawei.appmate.model.ProductType" />
+
+        <variable
+            name="purchase"
+            type="com.huawei.appmate.model.PurchaseInfo" />
+
+        <variable
+            name="callback"
+            type="com.huawei.appmate.tech.iap.clientapp.callback.PurchaseCallback" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="@dimen/upsdk_margin_m"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:id="@+id/itemPurchaseInfoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/space_medium"
+            android:paddingTop="@dimen/space_small"
+            android:paddingEnd="@dimen/space_medium"
+            android:paddingBottom="@dimen/space_small">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="@dimen/space_small"
+                android:text="@string/purchase_info_header_text"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxsmall"
+                android:paddingBottom="@dimen/space_xxsmall">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/purchase_token_header_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/purchaseTokenTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    tools:text="@{purchase.purchaseToken}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxsmall"
+                android:paddingBottom="@dimen/space_xxsmall">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/product_id_header_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/purchaseItemProductIdTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    tools:text="@{purchase.productId}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxsmall"
+                android:paddingBottom="@dimen/space_xxsmall">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/order_id_header_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/purchaseItemOrderIdTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    tools:text="@{purchase.orderId}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxsmall"
+                android:paddingBottom="@dimen/space_xxsmall">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/purchase_time_header_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/purchaseItemPurchaseTimeTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    app:bindServerDate="@{purchase.purchaseTime}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxsmall"
+                android:paddingBottom="@dimen/space_xxsmall">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/purchase_status_header_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/purchaseItemPurchaseStatusTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    tools:text="@{Integer.toString(purchase.purchaseStatus)}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxsmall"
+                android:paddingBottom="@dimen/space_xxsmall">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/platform_header_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/purchaseItemPlatformTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    tools:text="@{purchase.platform}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxsmall"
+                android:paddingBottom="@dimen/space_xxsmall">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sandbox_test_purchase_header_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/purchaseItemSandboxTestTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    tools:text="@{purchase.sandbox ? @string/true_string : @string/false_string}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxsmall"
+                android:paddingBottom="@dimen/space_xxsmall">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/purchase_consume_header_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/purchaseConsumeTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    tools:text="@{Integer.toString(purchase.consumed)}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxsmall"
+                android:paddingBottom="@dimen/space_xxsmall">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/purchase_country_header_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/purchaseCountryTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    tools:text="@{purchase.country$iap_release}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxsmall"
+                android:paddingBottom="@dimen/space_xxsmall">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/purchase_price_header_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/purchasePriceTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="#FF9900"
+                    tools:text="@{purchase.renewPrice}" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnConsume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/btnUnsubscribe"
+                    android:background="#007dff"
+                    android:onClick="@{() -> callback.onConsumeButtonClick(purchase.purchaseToken)}"
+                    android:padding="2dp"
+                    android:text="consumePurchase()"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:visibility="@{purchase.productType == ProductType.CONSUMABLE ? (purchase.consumed == 0 ? View.VISIBLE : View.GONE) : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnUnsubscribe"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnUnsubscribe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:color/holo_red_dark"
+                    android:onClick="@{() -> callback.onUnsubscribeButtonClick(purchase.purchaseToken)}"
+                    android:padding="2dp"
+                    android:text="unsubscribe()"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:visibility="@{purchase.productType == ProductType.SUBSCRIPTION ? (purchase.purchaseStatus != 3 ? (purchase.purchaseStatus != 4 ? View.VISIBLE : View.GONE) : View.GONE) : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

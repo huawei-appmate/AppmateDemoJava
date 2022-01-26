@@ -1,0 +1,10 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://developer.huawei.com/repo/"}
+        maven { url "http://119.8.167.238:8081/repository/maven-public/";allowInsecureProtocol = true}
+    }
+}
+include ':app'

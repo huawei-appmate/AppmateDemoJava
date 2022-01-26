@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.huawei.appmate.tech.iap.clientapp.ui.HomeFragment"
+        android:label="@string/home_fragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_myPurchasesFragment"
+            app:destination="@id/purchasesFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_errorCodeFragment"
+            app:destination="@id/errorCodeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_syncPurchaseHistoryFragment"
+            app:destination="@id/syncPurchaseHistoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_userRelationFragment"
+            app:destination="@id/userRelationFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.huawei.appmate.tech.iap.clientapp.ui.ProductListFragment"
+        android:label="@string/product_list_fragment"
+        tools:layout="@layout/fragment_product_list" />
+
+    <fragment
+        android:id="@+id/purchasesFragment"
+        android:name="com.huawei.appmate.tech.iap.clientapp.ui.PurchasesFragment"
+        android:label="@string/my_purchases_fragment"
+        tools:layout="@layout/fragment_my_product" />
+
+    <fragment
+        android:id="@+id/errorCodeFragment"
+        android:name="com.huawei.appmate.tech.iap.clientapp.ui.ErrorCodeFragment"
+        android:label="@string/error_code_list"
+        tools:layout="@layout/fragment_error_code" />
+
+    <fragment
+        android:id="@+id/syncPurchaseHistoryFragment"
+        android:name="com.huawei.appmate.tech.iap.clientapp.ui.SyncPurchaseHistoryFragment"
+        android:label="@string/sync_purchase_history"
+        tools:layout="@layout/fragment_sync_purchase_history" />
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.huawei.appmate.tech.iap.clientapp.ui.SettingFragment"
+        android:label="@string/setting"
+        tools:layout="@layout/fragment_setting" />
+
+    <fragment
+        android:id="@+id/userRelationFragment"
+        android:name="com.huawei.appmate.tech.iap.clientapp.ui.UserRelationFragment"
+        android:label="@string/user_relation"
+        tools:layout="@layout/fragment_user_relation" />
+</navigation>

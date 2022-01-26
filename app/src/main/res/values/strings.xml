@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Appmate Demo</string>
+    <!-- Home Fragment -->
+    <string name="home_fragment">Home fragment</string>
+
+    <string name="fetching_product">Fetching Product</string>
+    <string name="fetching_purchases">Fetching Purchases</string>
+    <string name="sync_purchase_history">Sync Purchase History</string>
+    <string name="user_relation">User Relation</string>
+    <string name="error_code_list">Error Code List</string>
+    <string name="setting">Setting</string>
+
+    <string name="my_purchase">My Purchases</string>
+    <string name="true_string">True</string>
+    <string name="false_string">False</string>
+    <string name="fetching_all_purchase">With calling getPurchasesHistory method of the SDK you can get all of the purchases list made by user. The list returned by this method might be contains purchases which are already consumed or just purchased but not consumed consumable product\'s purchases. Also might be contains expired-ongoing subscription product\'s purchases or entitlement granted non-consumable product\'s purchases. In summary, you get all the purchases made by the user without any filtering.</string>
+    <string name="fetching_current_purchase">With calling getPurchases method of the SDK you can get the list of purchases which comes with specific filtering rules from the user\'s purchases. These filtering rules are;\n\nPurchased but not consumed purchases\nOngoing subscription purchases</string>
+
+    <!-- Product List Fragment -->
+    <string name="product_list_fragment">Product list fragment</string>
+    <string name="my_purchases_fragment">My purchases fragment</string>
+    <string name="products_by_product_id_layout_desc">Separate the product IDs with ,</string>
+    <string name="products_buy_button_already_product">Please consume the product to buy it again.</string>
+    <string name="product_buy_stop">Stopped buying</string>
+    <string name="product_purchase">purchase</string>
+    <string name="products_buy_already_product">consume it to get it again</string>
+    <string name="fetching_product_desc">This page describes how to fetch the products. With the getProducts method of PurchaseClient, you will get the active products synced with the Google Play Store and Huawei App Gallery.\n\nYou can access the list of all products, list of some spesific products or the list of products filtered by product types.</string>
+
+    <!-- Purchase history strings -->
+    <string name="purchase_info_header_text">Purchase Info</string>
+    <string name="product_id_header_text">Product Id:</string>
+    <string name="purchase_token_header_text">Purchase Token:</string>
+    <string name="order_id_header_text">Order Id:</string>
+    <string name="purchase_time_header_text">Purchase Time:</string>
+    <string name="purchase_status_header_text">Purchase Status:</string>
+    <string name="platform_header_text">Platform:</string>
+    <string name="sandbox_test_purchase_header_text">Sandbox Test Purchase:</string>
+    <string name="purchase_consume_header_text">Consume:</string>
+    <string name="purchase_price_header_text">Price:</string>
+    <string name="purchase_country_header_text">Country:</string>
+    <string name="current_purchases">Current Purchases</string>
+    <string name="purchase_history">Purchase History</string>
+    <string name="consume">Consume</string>
+    <string name="unsubscribe">Unsubscribe</string>
+
+    <!-- Sync -->
+    <string name="sync_purchase_history_desc">If your users had some purchases that performed before you implemented SDK to your project, you will be able to sync this purchase transactions with usp. This will allows you to see all the purchase records made by this user, this data will be available seen via purchase reports. Additionally, if you want to show all purchase history records of your users, you will able to fetch all purchases after syncing purchase history transactions. See this page to learn how to fetch all purchases. To store users\' transaction history, call createPurchaseHistoryTransactions method.\n\nYou should send this request only when your application is installed for the first time on a device or when your application has been removed from a device and reinstalled.</string>
+    <string name="sync">Sync</string>
+
+
+    <!-- Strings -->
+    <string name="setting_screen_title">Setting</string>
+    <string name="setting_screen_set_mobile_service">Set Mobile Services</string>
+    <string name="setting_screen_hms">HMS</string>
+    <string name="setting_screen_gms">GMS</string>
+    <string name="setting_screen_unsupported">UNSUPPORTED</string>
+    <string name="setting_screen_not_support_message">The device does not support %s</string>
+    <string name="setting_screen_done">Done</string>
+    <string name="setting_screen_client_user_id">Client User Id</string>
+    <string name="setting_screen_api_base_url_type">Api Base Url Type</string>
+    <string name="setting_screen_api_prod">PROD</string>
+    <string name="setting_screen_api_test">TEST</string>
+
+    <!-- Strings -->
+    <string name="user_relation_create">Create Relation</string>
+    <string name="delete_sub_user_id">Delete Sub User Id Relation</string>
+    <string name="delete_master_user_id">Delete Master User Id Relation</string>
+    <string name="enter_sub_user_id">Please enter Sub User ID</string>
+    <string name="enter_master_user_id">Please enter Master User ID</string>
+
+    <!-- Error Code Screen -->
+    <string name="error_code_list_data">
+        <b>Error Code\t\tDefinition</b>\n
+        000002\t\t\t\t\tInvalid request parameters.\n
+        000005\t\t\t\t\tUnexpected error occurred.\n
+        000020\t\t\t\t\tRelation is already exists.\n
+        000021\t\t\t\t\tUser is already master.Can\'t be slave.\n
+        000022\t\t\t\t\tUser is already slave.Can\'t be master.\n
+        000023\t\t\t\t\tSlave user is already belongs to another master user.\n
+        000071\t\t\t\t\tPurchase is not found.\n
+        000072\t\t\t\t\tEmpty expire time.\n
+        000090\t\t\t\t\t{Google error message}\n
+        000092\t\t\t\t\tHuawei only supports Unsubscribe Subscription\n
+        000094\t\t\t\t\tInvalid Platform..!\n
+        000097\t\t\t\t\t{Huawei error message}\n
+        000102\t\t\t\t\tGMS Config is not valid.\n
+        000103\t\t\t\t\tApplication not found.\n
+        0000012\t\t\t\tApi key is not found.\n
+        0000013\t\t\t\tPackage name is not found.\n</string>
+
+
+</resources>
